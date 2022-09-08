@@ -39,6 +39,7 @@ public class SplashScreen extends javax.swing.JFrame {
         popupMenu1.setLabel("popupMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(500, 500));
         getContentPane().setLayout(null);
 
         progressBar.setForeground(new java.awt.Color(0, 204, 255));
@@ -47,13 +48,14 @@ public class SplashScreen extends javax.swing.JFrame {
 
         loginImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\91987\\Downloads\\quizLoginImage.png")); // NOI18N
         getContentPane().add(loginImage);
-        loginImage.setBounds(-180, -10, 830, 670);
+        loginImage.setBounds(-270, -100, 920, 690);
 
         progressLabel.setText("jLabel1");
         getContentPane().add(progressLabel);
         progressLabel.setBounds(320, 470, 38, 16);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     
@@ -84,9 +86,20 @@ public class SplashScreen extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                sc.setVisible(true);
+            }
+            
+        });
+        
         try {
             for(int i=0;i<=100;i++) {
-                Thread.sleep(700);
+                Thread.sleep(100);
                 sc.progressBar.setValue(i);
                 if(i==5) {
                    sc.progressLabel.setText("Loading,Please wait.....");
@@ -99,8 +112,8 @@ public class SplashScreen extends javax.swing.JFrame {
 //                    addAdmin.setVisible(true);
                     //ViewUsers viewUsers = new ViewUsers();
                    // viewUsers.setVisible(true);
-//                    LoginScreen loginScreen = new LoginScreen();
-//                    loginScreen.setVisible(true);
+                    LogInScreen loginScreen = new LogInScreen();
+                    loginScreen.setVisible(true);
                     sc.dispose();
                 }
             }
@@ -108,16 +121,6 @@ public class SplashScreen extends javax.swing.JFrame {
             System.out.println("Error in Splash Screen = " + e);
         }
         
-        
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new LogInScreen().setVisible(true);
-            }
-            
-        });
 
         /* Create and display the form */
         
